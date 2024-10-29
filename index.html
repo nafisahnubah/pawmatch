@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PawMatch</title>
+
+    <!-- daisyUI 4.12.12 CSS file + Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="px-20">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start flex gap-2">
+              <img src="./images/logo.webp" alt="logo">
+              <a class="text-xl font-bold">PawMatch</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+                <img class="w-8 border-2 rounded-full" src="https://img.icons8.com/ios/50/gender-neutral-user--v1.png" alt="user icon"/>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-20">
+        <div class="hero min-h-screen pb-16">
+            <div class="hero-content text-center">
+              <div class="max-w-xl">
+                <h3 class="text-xl pb-6">Bringing Families Together</h3>
+                <h1 class="text-5xl font-bold">Your Path to Adoption Starts Here</h1>
+                <p class="py-6">
+                    Find your perfect furry friend today! At PawMatch, we connect loving homes with pets in need. Browse profiles, get matched, and start your adoption journey now—your new companion is waiting!
+                </p>
+                <a href="#adopt-container"><button class="btn bg-teal-700 text-white">View More</button></a>
+                <img src="./images/pet.webp" alt="Picture of a cat and a dog" class="py-6">
+              </div>
+            </div>
+        </div>
+
+        <div id="adopt-container">
+            <div class="max-w-xl text-center mx-auto">
+                <h1 class="text-4xl font-bold">Adopt  Your  Best Friend</h1>
+                <p class="py-6">
+                    Explore our wide range of pets waiting to become your new best friend. From playful pups to snuggly kittens, find your perfect match and start your adoption journey today!
+                </p>
+            </div>
+            
+            <div id="categories-container" class="py-6 mx-auto flex justify-center"></div>
+            
+            <div class="flex justify-between py-6">
+                <h3 class="text-2xl font-semibold">Best Deal For You</h1>
+                <button id="sort-by-price-btn" class="btn bg-teal-700 text-white">Sort By Price</button>
+            </div>
+
+            <div id="loading-spinner" class="hidden flex justify-center">
+                <span class="loading loading-ball loading-xs"></span>
+                <span class="loading loading-ball loading-sm"></span>
+                <span class="loading loading-ball loading-md"></span>
+                <span class="loading loading-ball loading-lg"></span>
+            </div>
+
+            <div class="md:grid grid-cols-3 gap-4 sm:flex flex-col-reverse">
+                <div id="pets-container" class="mx-auto grid md:grid-cols-3 gap-10 col-span-2"></div>
+                <div id="liked-pets" class="grid grid-cols-2 gap-2 auto-rows-min border rounded"></div>
+            </div>
+        </div>
+    </main>
+
+    <button class="btn hidden" id="detailsModalShow" onclick="detailsModal.showModal()">open modal</button>
+    <dialog id="detailsModal" class="modal">
+        <div class="modal-box">
+            <div id="modal-content"></div>
+            <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Close</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+
+    <button class="btn hidden" id="adoptModalShow" onclick="adoptModal.showModal()">open modal</button>
+    <dialog id="adoptModal" class="modal">
+        <div class="modal-box text-center">
+            <img class="mx-auto w-10 pb-2" src="https://img.icons8.com/ios/50/1A1A1A/helping-hand.png" alt="helping-hand"/>
+            <h1 class="text-3xl font-bold">Congrats!</h1>
+            <p class="py-2">
+                Your adoption process has been started
+            </p>
+            <div id="adopt-modal-content"></div>
+            <div class="modal-action hidden">
+            <form method="dialog">
+                <button id="adopt-close-btn" class="btn">Close</button>
+            </form>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="footer bg-black text-white py-10 px-20 mt-6">
+        <div>
+            <div class="flex gap-2">
+                <img class="w-9" src="./images/logo.webp" alt="logo">
+                <a class="text-2xl font-bold">PawMatch</a>
+            </div>
+            <p>Location: av. Washington 165, NY CA 54003<br>
+                Phone: +31 85 964 47 25<br>
+                Email: info@yourdomain.com<br>
+                Openings hours: 9.00 AM - 5.00 PM
+            </p>
+            <ul class="flex justify-center gap-2">
+                <li><a href=""><img class="w-8" src="https://img.icons8.com/ios/50/FFFFFF/facebook-new.png" alt="facebook-new"/></a></li>
+                <li><a href=""><img class="w-8" src="https://img.icons8.com/ios/50/FFFFFF/twitterx--v2.png" alt="twitterx--v2"/></a></li>
+                <li><a href=""><img class="w-8" src="https://img.icons8.com/ios/50/FFFFFF/youtube-play--v1.png" alt="youtube-play--v1"/></a></li>
+                <li><a href=""><img class="w-8" src="https://img.icons8.com/ios/50/FFFFFF/instagram-new--v1.png" alt="instagram-new--v1"/></a></li>
+            </ul>
+        </div>
+        <nav>
+          <h6 class="footer-title">Useful Links</h6>
+          <a class="link link-hover">Home</a>
+          <a class="link link-hover">About Us</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foundation</a>
+          <a class="link link-hover">Contact</a>
+        </nav>
+        <form>
+          <h6 class="footer-title">Drop a message</h6>
+          <input type="text" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
+          <button class="btn bg-teal-700 text-white w-full">Subscribe</button>
+        </form>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
